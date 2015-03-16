@@ -1,0 +1,50 @@
+File Structure
+
+The whole system is located inside a folder called WP_Assingment_1.
+I separated the website into four different folders called ,"classes", "includes", "functions" and "core".
+And the interactive pages were saved outside the folders.
+
+Classes: inside classes is the security, database, session and validation files.
+Each file works with one another to ensure the user is safe while logged in.
+
+Includes: Inside includes is an error re-directory. This class was used at the beginning of development 
+but I chose not to use it as the website is only small, and validation can stop most the errors. This file can
+be used when creating a more advanced website. 
+
+Functions: Inside functions is a sanitize file. This translates HTML strings into the chosen entities (UTF-8). 
+This makes the website more secure. 
+
+Core: Inside core is the overall connection to the database which also includes the session and connects to the "Classes" folder.
+This structure is more efficient because changes can be made to the classes folder or the connection folder without having to retype
+or include other folders. 
+
+Customer Tables
+
+CREATE TABLE IF NOT EXISTS `users` (
+`id` int(11) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(64) NOT NULL,
+  `salt` varchar(32) NOT NULL,
+  `name` varchar(55) NOT NULL,
+  `joined` date NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `address` varchar(55) NOT NULL,
+  `address2` varchar(55) NOT NULL,
+  `postcode` varchar(12) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+
+I used one table with standard e-commerce details. Only one table was needed because data could be inserted by updating the table.
+Salt is inserted into the database to hash the password, making it more difficult for malicious attackers to hack users.
+
+Account Details
+
+WinSCP:
+	Host name: student20393.201415.uk
+	Username: i7709966
+	Password: Ott12345
+MySQL:
+	Username: i7709966
+	Password: 069ca095950a9e5bd82ccfe422d74a06
+	Database: i7709966
+	
+Test cases
